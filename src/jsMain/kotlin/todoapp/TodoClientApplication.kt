@@ -6,6 +6,7 @@ import kotlinx.html.h1
 import kotlinx.html.js.div
 import react.create
 import react.dom.client.createRoot
+import todoapp.ui.App
 import todoapp.ui.welcome.WelcomePage
 
 /**
@@ -17,8 +18,6 @@ fun main() {
     val container = document.getElementById("root") ?: error("Couldn't find root container!")
 
     createRoot(container = container).render(
-        WelcomePage.create {
-            name = "Inho Choi"
-        }
+        App.create()
     )
 }
