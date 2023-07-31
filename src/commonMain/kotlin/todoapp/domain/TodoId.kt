@@ -38,9 +38,13 @@ data class TodoId(val value: String) {
     }
 }
 
-interface TodoIdGenerator {
+expect interface TodoIdGenerator { // 실체화 된 코드가 따로 있다.
 
-    fun generateId(): TodoId
+    open fun generateId(): TodoId
+}
+
+class UUIDTodoIdGenerator : TodoIdGenerator {
+
 }
 
 class RandomTodoIdGenerator: TodoIdGenerator {
